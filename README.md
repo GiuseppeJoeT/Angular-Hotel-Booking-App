@@ -1,4 +1,5 @@
-# AngularHotelBookingApp
+# Angular-Hotel-Booking-App
+The application will have a booking system obviously, it will be organized in modules and the lazy loading of route will be integrated.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
 
