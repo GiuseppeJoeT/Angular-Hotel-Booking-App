@@ -1,0 +1,168 @@
+{
+  "login": {
+    "name": "Mario Rossi",
+    "token": "123456"
+  },
+  "hotels": [
+    {
+      "id": 1,
+      "city": "milan",
+      "name": "Hotel Rockstar",
+      "services": [
+        "alarm", "beer", "car", "heart-empty", "train", "restaurant", "paw", "easel", "cafe"
+      ],
+      "location": {
+        "lat": 44, "lng": 11, "address": "milano, Assago Strada 4"
+      },
+      "rate": 4.2,
+      "stars":4,
+      "images": [
+        "https://picsum.photos/300/200/?image=1",
+        "https://picsum.photos/300/200/?image=2",
+        "https://picsum.photos/300/200/?image=3",
+        "https://picsum.photos/300/200/?image=4",
+        "https://picsum.photos/300/200/?image=5",
+        "https://picsum.photos/300/200/?image=6"
+      ],
+      "email": "info@hotelrockstar.com",
+      "rooms": [
+        { "label": "Single", "price": 89 },
+        { "label": "Double", "price": 99 },
+        { "label": "Triple", "price": 109 }
+      ]
+    },
+    {
+      "id": 2,
+      "city": "milan",
+      "name": "Hotel Best Western",
+      "services": [
+        "briefcase","train", "paw", "restaurant", "alarm", "car"
+      ],
+      "location": {
+        "lat": 43, "lng": 13, "address": "Milano, Viale Monza"
+      },
+      "rate": 3.7,
+      "stars": 3,
+      "images": [
+        "https://picsum.photos/300/200/?image=21",
+        "https://picsum.photos/300/200/?image=22",
+        "https://picsum.photos/300/200/?image=23",
+        "https://picsum.photos/300/200/?image=24",
+        "https://picsum.photos/300/200/?image=25",
+        "https://picsum.photos/300/200/?image=26"
+      ],
+      "email": "info@hotelbestwestern.com",
+      "rooms": [
+        { "label": "Single", "price": 69 },
+        { "label": "Double", "price": 79 }
+      ]
+    },
+    {
+      "id": 3,
+      "city": "milan",
+      "name": "Albergo Al Duomo",
+      "services": [
+        "paw", "restaurant", "alarm", "car"
+      ],
+      "location": {
+        "lat": 43, "lng": 13, "address": "Milano, Duomo"
+      },
+      "rate": 3.5,
+      "stars": 4,
+      "images": [
+        "https://picsum.photos/300/200/?image=31",
+        "https://picsum.photos/300/200/?image=32",
+        "https://picsum.photos/300/200/?image=33",
+        "https://picsum.photos/300/200/?image=34",
+        "https://picsum.photos/300/200/?image=35",
+        "https://picsum.photos/300/200/?image=36"
+      ],
+      "email": "info@hotelduomo.com",
+      "rooms": [
+        { "label": "Single", "price": 129 },
+        { "label": "Double", "price": 139 }
+      ]
+    },
+    {
+      "id": 4,
+      "city": "milan",
+      "name": "Hotel Venini",
+      "services": [
+        "briefcase","train", "paw", "restaurant", "alarm", "car"
+      ],
+      "location": {
+        "lat": 43, "lng": 13, "address": "Milano, Via Venini"
+      },
+      "rate": 3.8,
+      "stars": 3,
+      "images": [
+        "https://picsum.photos/300/200/?image=41",
+        "https://picsum.photos/300/200/?image=42",
+        "https://picsum.photos/300/200/?image=43",
+        "https://picsum.photos/300/200/?image=44",
+        "https://picsum.photos/300/200/?image=45",
+        "https://picsum.photos/300/200/?image=46"
+      ],
+      "email": "info@hotelbestwestern.com",
+      "rooms": [
+        { "label": "Single", "price": 69 },
+        { "label": "Double", "price": 79 }
+      ]
+    },
+    {
+      "id": 11,
+      "city": "roma",
+      "name": "Albergo Roma",
+      "services": [
+        "bed", "alarm", "car", "briefcase","bed", "bycycle"
+      ],
+      "location": {
+        "lat": 40, "lng": 13, "address": "Rome, Zona Colosseo"
+      },
+      "rate": 4.5,
+      "stars": 4,
+      "images": [
+        "https://picsum.photos/300/200/?image=111",
+        "https://picsum.photos/300/200/?image=112",
+        "https://picsum.photos/300/200/?image=113",
+        "https://picsum.photos/300/200/?image=114",
+        "https://picsum.photos/300/200/?image=115",
+        "https://picsum.photos/300/200/?image=116"
+      ],
+      "email": "info@hotelroma.com",
+      "rooms": [
+        { "label": "Single", "price": 89 },
+        { "label": "Double", "price": 99 },
+        { "label": "Triple", "price": 109 }
+      ]
+    },
+    {
+      "id": 12,
+      "city": "roma",
+      "name": "Hotel Termini",
+      "services": [
+        "alarm", "beer", "car", "heart-empty", "train", "restaurant", "paw", "easel", "cafe"
+      ],
+      "location": {
+        "lat": 40, "lng": 13, "address": "Rome, Termini"
+      },
+      "rate": 3.1,
+      "stars": 3,
+      "images": [
+        "https://picsum.photos/300/200/?image=121",
+        "https://picsum.photos/300/200/?image=122",
+        "https://picsum.photos/300/200/?image=123",
+        "https://picsum.photos/300/200/?image=124",
+        "https://picsum.photos/300/200/?image=125",
+        "https://picsum.photos/300/200/?image=126"
+      ],
+      "email": "info@hotelroma.com",
+      "rooms": [
+        { "label": "Single", "price": 112 },
+        { "label": "Double", "price": 129 },
+        { "label": "Triple", "price": 149 }
+      ]
+    }
+
+  ]
+}
