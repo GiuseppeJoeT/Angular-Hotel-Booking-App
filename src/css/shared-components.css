@@ -1,0 +1,38 @@
+
+.card {
+  background: white;
+  border-radius: 5px;
+}
+
+.card.scrollable {
+  overflow: auto;
+}
+
+.card .content {
+  padding: 0px 20px;
+}
+
+.card .title {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  font-size: 26px;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.card.error {
+  background-color: lightcoral;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.separator {
+  padding: 10px 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .card { margin-top: 20px; }
+}

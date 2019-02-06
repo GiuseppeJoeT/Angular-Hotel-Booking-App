@@ -1,0 +1,13 @@
+/* file renamed from feature-home.css to search.css */
+.side-bar {
+  grid-row: 1/3;
+}
+
+.map {
+  grid-column: 2/4;
+}
+
+.map .address {
+  margin-top: 20px;
+  margin-left: 20px;
+}

@@ -1,0 +1,27 @@
+.navigation {
+  margin: 20px;
+  background-color: white;
+  border-radius: 5px;
+  /* top/bottom, left/right */
+  padding: 10px 20px;
+}
+
+.navigation .logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+
+.navigation .btn {
+  font-size: 20px;
+  font-weight: 300;
+  margin: 0 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+.navigation .btn.active {
+  font-size: 20px;
+  font-weight: bold;
+  cursor: default;
+}
