@@ -1,3 +1,15 @@
-<p>
-  login works!
-</p>
+  <!--CONTENT-->
+<div class="wrapper centered">
+  <div class="card vh-centered">
+    <div class="title">Login</div>
+    <div class="content">
+
+      <!-- #f="ngForm" -> template reference variable xxx [ngModel] -->
+      <form (submit)="auth.login()">
+        <input type="text" required placeholder="Username"  name="user" >
+        <input type="password" required placeholder="Password" name="pass" >
+        <button type="submit" [disabled]="">SIGN-IN</button>
+      </form>
+    </div>
+  </div>
+</div>
