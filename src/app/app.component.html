@@ -2,9 +2,9 @@
 <div>
 <!-- navbar -->
 <!-- *ngIf="auth.isLogged()" -->
-<div class="navigation" >
+<div class="navigation" *ngIf="auth.isLogged()">
   <div class="horiz-grid">
-    <div class=logo>BOOKING</div>
+    <div class=logo>DREAM TRAVEL</div>
     <div class="horiz-grid">
       <span class="btn" routerLink="search" routerLinkActive="active">SEARCH</span>
       <span class="btn" routerLink="cart" routerLinkActive="active">
@@ -12,6 +12,7 @@
       </span>
       <span class="btn" (click)="auth.logout()" >LOGOUT</span>
     </div>
+    <!-- usiamo il safe operator ? perché data inizialmente è undefined  -->
     <em>{{ auth.data?.name }}</em>
   </div>
 </div>
