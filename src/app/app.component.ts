@@ -8,5 +8,7 @@ import { AuthService } from './core/services/auth.service';
 })
 export class AppComponent {
   // title = 'hotel-booking';
-  constructor(public auth: AuthService) {}
+  constructor(
+    // public cart: CartService,
+    public auth: AuthService) {}
 }
