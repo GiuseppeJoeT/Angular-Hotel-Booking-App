@@ -16,7 +16,9 @@
       <div class="font-big">Hotel in {{text}}</div>
 
       <div class="horiz-grid separator"
-            *ngFor="let hotel of hotels">
+            *ngFor="let hotel of hotels"
+            (click)="setActive(hotel)"
+            [ngClass]="{'active': hotel.id === active?.id}">
         <div>{{hotel.name}}</div>
         <div>{{hotel.rooms[0].price}}</div>
       </div>
@@ -25,6 +27,8 @@
       <div class="horiz-grid">
         <div></div>
         <em>{{hotels?.length}} results</em>
+
+        <!-- <pre>{{ active | json }}</pre> -->
       </div>
 
     </div>
@@ -33,11 +37,11 @@
   <!--MAP-->
   <div class="card map">
     <div>
-      <img src="https://maps.googleapis.com/maps/api/staticmap?center=Milano&zoom=15&size=700x200&key=AIzaSyBAyMH-A99yD5fHQPz7uzqk8glNJYGEqus"
+      <img src="https://maps.googleapis.com/maps/api/staticmap?center={{active?.location.address}}&zoom=15&size=700x200&key=AIzaSyBAyMH-A99yD5fHQPz7uzqk8glNJYGEqus"
             width="100%" height="200">
       <div class="address">
-        <div class="font-big">Hotel Rockstar</div>
-        <div class="font-small">Milano, Via Marconi 123</div>
+        <div class="font-big">{{active?.name}}</div>
+        <div class="font-small">{{active?.location.address}}</div>
       </div>
     </div>
 </div>
@@ -49,57 +53,37 @@
 
       <div class="separator"></div>
       <div class="font-superbig">
-        4.1
+        {{ active?.rate }}
         <i class="ion-ios-person"></i>
       </div>
       <div>
-        <i class="icon ion-ios-star"></i>
-        <i class="icon ion-ios-star"></i>
-        <i class="icon ion-ios-star"></i>
-        <i class="icon ion-ios-star"></i>
-        <i class="icon ion-ios-star-outline"></i>
+        <i *ngFor="let star of [0,0,0,0,0]"
+        class="icon ion-ios-star-outline"></i>
       </div>
 
       <br>
 
-      <div class="horiz-grid separator">
-        <div>Single</div>
+      <div class="horiz-grid separator"
+          *ngFor="let room of active?.rooms">
+        <div>{{ room.label }}</div>
         <div>
-          € 89
+          {{ room.price }}
           <i class="ion-ios-cart"></i>
         </div>
       </div>
 
-      <div class="horiz-grid separator">
-        <div>Double</div>
-        <div>
-          € 99
-          <i class="ion-ios-cart"></i>
-        </div>
-      </div>
-
-      <div class="horiz-grid separator">
-        <div>Triple</div>
-        <div>
-          € 115
-          <i class="ion-ios-cart"></i>
-        </div>
       </div>
     </div>
-
-  </div>
+    <!-- fine INFO BOX-->
 
 <!-- IMAGE GALLERY -->
 <div class="card gallery scrollable">
-  <img src="https://picsum.photos/400/200/?image=13" width="100%" height="150" alt="">
+  <img [src]="activeImage" width="100%" height="150" alt="">
   <div class="nested">
-    <div><img src="https://picsum.photos/300/200/?image=22" width="100%"></div>
-    <div><img src="https://picsum.photos/300/200/?image=23" width="100%"></div>
-    <div><img src="https://picsum.photos/300/200/?image=24" width="100%"></div>
-    <div><img src="https://picsum.photos/300/200/?image=25" width="100%"></div>
-    <div><img src="https://picsum.photos/300/200/?image=26" width="100%"></div>
-    <div><img src="https://picsum.photos/300/200/?image=27" width="100%"></div>
-
+    <div *ngFor="let img of active?.images"
+          (click)="activeImage = img">
+      <img [src]="img" width="100%">
+    </div>
   </div>
 </div>
 
@@ -107,19 +91,9 @@
 <div class="card services scrollable">
     <div class="title">Services</div>
     <div class="nested">
-      <div><i class="icon ion-ios-airplane" title="airplane"></i></div>
-      <div><i class="icon ion-ios-alarm" title="alarm"></i></div>
-      <div><i class="icon ion-ios-beer" title="beer"></i></div>
-      <div><i class="icon ion-ios-car" title="car"></i></div>
-      <div><i class="icon ion-ios-heart-empty" title="heart"></i></div>
-      <div><i class="icon ion-ios-train" title="train"></i></div>
-      <div><i class="icon ion-ios-restaurant" title="restaurant"></i></div>
-      <div><i class="icon ion-ios-paw" title="paw"></i></div>
-      <div><i class="icon ion-ios-easel" title="easel"></i></div>
-      <div><i class="icon ion-ios-cafe" title="cafe"></i></div>
-      <div><i class="icon ion-ios-briefcase" title="briefcase"></i></div>
-      <div><i class="icon ion-ios-bed" title="bed"></i></div>
-      <div><i class="icon ion-ios-bycycle" title="bycycle"></i></div>
+      <div *ngFor="let icon of active?.services">
+        <i [class]="'icon ion-ios-' + icon" [title]="icon"></i>
+      </div>
     </div>
 </div>
 
@@ -127,10 +101,12 @@
 <div class="card contact">
   <div class="title">Contacts</div>
   <div class="content">
-    <form>
-      <input type="text" placeholder="Your mail" required>
-      <textarea cols="20" rows="6" placeholder="Your message" required></textarea>
-      <button type="submit">SEND</button>
+    <form #contactForm="ngForm" (submit)="sendEmail(contactForm.value)">
+      <input type="text" placeholder="Your mail" required
+      [ngModel] name="email">
+      <textarea cols="20" rows="6" placeholder="Your message" required
+      [ngModel] name="msg"></textarea>
+      <button type="submit" [disabled]="contactForm.invalid">SEND</button>
     </form>
   </div>
 </div>
