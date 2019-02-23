@@ -14,7 +14,7 @@ export class AuthService {
   constructor(
     private http: HttpClient,
     private router: Router
-    ) {  }
+    ) { }
 
       // GET servizio endpoint Login
       // login(user, pass) {
@@ -28,10 +28,9 @@ export class AuthService {
         .set('user', user)
         .set('pass', pass);
 
-        this.http.get<Auth>(`http://localhost:4200/login`, { params })
         // { params } sugar syntax ---> params: params
-          .subscribe(
-            res => {
+        this.http.get<Auth>(`http://localhost:3000/login`, { params })
+          .subscribe(res => {
               this.data = res; // data --> name e token
               // redirect dopo login
               this.router.navigateByUrl('search');
@@ -48,12 +47,12 @@ export class AuthService {
 
     // controllo se autenticato
     isLogged() {
+      // se esiste (true) this.data, analizza quello che segue
       // se il token esiste, ritorna true o false, se abbiamo un token e non è null siamo loggati
-      // se esiste this.data, analizza quello che segue
       const isAuth = this.data && this.data.token ? true : false;
+
       // TS trick, casting --> !! se stringa viene tradotto in booleano
       // const isAuth = !!this.data.token;
-
       return isAuth;
     }
 
